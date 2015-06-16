@@ -1,6 +1,8 @@
 futile.js
 =========
 
+Stop rewriting the same utility functions for JavaScript!  It's futile!
+
 Welcome to fidian's utilities for ECMAScript.  These are a few extremely useful functions that native JavaScript seems to lack, yet are found over and over in various projects.  Instead of rewriting them every time, why not just include a library that has it all for you?
 
 

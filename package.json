@@ -2,7 +2,7 @@
     "name": "futile",
     "version": "1.0.0",
     "author": "Tyler Akins <fidian@rumkin.com>",
-    "description": "fidian's utilities for ECMAScript.  Handy little constructs that I reimplement often.",
+    "description": "Stop rewriting useful JavaScript functions - it's futile!"
     "homepage": "https://github.com/fidian/futile",
     "contributors": [
         "Tyler Akins <fidian@rumkin.com> (http://rumkin.com)"
