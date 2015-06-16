@@ -1,0 +1,35 @@
+{
+    "name": "futile",
+    "version": "1.0.0",
+    "author": "Tyler Akins <fidian@rumkin.com>",
+    "description": "fidian's utilities for ECMAScript.  Handy little constructs that I reimplement often.",
+    "homepage": "https://github.com/fidian/futile",
+    "contributors": [
+        "Tyler Akins <fidian@rumkin.com> (http://rumkin.com)"
+    ],
+    "main": "./lib/futile.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fidian/futile.git"
+    },
+    "keywords": [
+        "fidian",
+        "futile",
+        "utility",
+        "utilities"
+    ],
+    "devDependencies": {
+        "jasmine-node": "~2.0.0",
+        "uglifyjs": "*"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=0.10",
+        "npm": "*"
+    },
+    "scripts": {
+        "build": "cd lib ; uglifyjs futile.js -c -m --source-map futile.min.js.map -o futile.min.js",
+        "test": "jasmine-node lib",
+        "watch": "jasmine-node --autoTest lib"
+    }
+}
