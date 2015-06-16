@@ -20,6 +20,7 @@
     ],
     "devDependencies": {
         "jasmine-node": "~2.0.0",
+        "fid-umd": "~2.0.3",
         "uglifyjs": "*"
     },
     "license": "MIT",
@@ -29,7 +30,8 @@
     },
     "scripts": {
         "build": "cd lib ; uglifyjs futile.js -c -m --source-map futile.min.js.map -o futile.min.js",
-        "test": "jasmine-node lib",
-        "watch": "jasmine-node --autoTest lib"
+        "test": "jasmine-node test",
+        "umd": "grep -rl '// fid-umd' lib/ --include \\*.js | xargs fid-umd",
+        "watch": "jasmine-node --autoTest test"
     }
 }
