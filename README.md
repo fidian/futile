@@ -18,20 +18,45 @@ Used for iteration across objects and arrays.  Calls `callback` with the given c
 * When `thing` is a number, string, boolean or `null`, calls `callback` once with `thing` as the value and `undefined` as the key.
 * When `thing` is undefined, no calls are made to `callback`.
 
+Example:
+
+    futile.each([ 1, 2, 3 ], function (value) {
+        console.log(value);
+    });
+
 
 ### `isArray(thing)`
 
 Returns `true` when `thing` is an instance of Array.
+
+Example:
+
+    if (futile.isArray(variable)) {
+        console.log('Yes, this is an array');
+    }
 
 
 ### `isFunction(thing)`
 
 Returns `true` when `thing` is an instance of Function or when it is otherwise callable.  This was adapted from [is-callable].
 
+Example:
+
+    if (futile.isFunction(null)) {
+        console.log('null is not a function so this does not run');
+    }
+
 
 ### `isObject(thing)`
 
 Returns `true` when `thing` is an object.  This excludes Arrays and null and really means "it's an object".
+
+Example:
+
+    console.log(futile.isObject({}));  // true
+    console.log(futile.isObject(7));  // false
+    console.log(futile.isObject(null));  // false - DIFFERS FROM "typeof"
+    console.log(futile.isObject([]));  // false - DIFFERS FROM "typeof"
 
 
 Including in Your Project
