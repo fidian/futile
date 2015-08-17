@@ -9,6 +9,19 @@ Welcome to fidian's utilities for ECMAScript.  These are a few extremely useful 
 Function List
 -------------
 
+### `clone(thing)`
+
+Performs a deep copy of something.  Make sure to not pass in circular data structures.  Also, Arrays only have the elements copied, not any additional properties.
+
+Example:
+
+    var a, b;
+    a = { "data": "goes in here" };
+    b = futile.clone(a);
+    b.data === a.data;  // true - strings match
+    b === a;  // false - two different object instances
+
+
 ### `each(thing, callback, [context=null])`
 
 Used for iteration across objects and arrays.  Calls `callback` with the given context for each item it comes across.  The callback should have a function signature like this:
@@ -25,6 +38,17 @@ Example:
     futile.each([ 1, 2, 3 ], function (value) {
         console.log(value);
     });
+
+
+### `hexByte(byte)`
+
+Returns one byte as uppercase hexadecimal.  Only the lower 8 bits are used.
+
+Example:
+
+    console.log(futile.hexByte(6));  // "06"
+    console.log(futile.hexByte(255));  // "FF"
+    console.log(futile.hexByte(256));  // "00"
 
 
 ### `isArray(thing)`
@@ -59,6 +83,17 @@ Example:
     console.log(futile.isObject(7));  // false
     console.log(futile.isObject(null));  // false - DIFFERS FROM "typeof"
     console.log(futile.isObject([]));  // false - DIFFERS FROM "typeof"
+
+
+### `isObjectType(expected, thing)`
+
+Returns true if the Object's prototype's .toString() method matches the expected type.
+
+Example:
+
+    futile.isObjectType("Function", function () {});  // true
+    futile.isObjectType("Array", []);  // true
+    futile.isObjectType("String", "sample");  // true
 
 
 Including in Your Project
